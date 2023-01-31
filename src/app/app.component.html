@@ -2,7 +2,8 @@
   <input type="text" id="myTextInput" />
 </div>
 <script type="text/javascript">
-  JFCustomWidget.subscribe("ready", function () {
+  JFCustomWidget.subscribe("ready", function (msg) {
+    console.log("ready message arrived from JotForm", msg);
     var charLimit = parseInt(JFCustomWidget.getWidgetSetting("charLimit"));
     var myTextInput = document.getElementById("myTextInput");
     myTextInput ? (myTextInput.maxLength = charLimit) : "";
